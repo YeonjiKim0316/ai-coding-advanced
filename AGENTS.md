@@ -51,7 +51,7 @@ AI 도우미가 일하기 전에 읽는 안내서입니다. 이 파일은 앞 �
 - `static/`: 화면 파일(html, css, js)과 샘플 리뷰(`samples.json`)입니다.
 - `tests/`: 테스트가 있는 폴더입니다.
 - `data/sample_logs.db`: 가상 분석 기록(462건)입니다.
-- `data/dev.db`: 위 파일의 사본입니다. 고쳐 봐도 되는 곳입니다.
+- `data/app.db`: 내 PC의 앱 DB입니다. 서버를 한 번 켜면 생기고, 고쳐 봐도 되는 곳입니다.
 - `docs/`: 상세 문서 자리입니다. 지금은 일부만 채워져 있습니다.
 - `models/`: AI 모델 파일(`model_quantized.onnx`, `tokenizer.json`)입니다.
 - `.agents/skills/`: AI에게 업무 순서를 알려 주는 스킬입니다.

@@ -11,10 +11,10 @@ sandbox = "unelevated"
 command = "npx"
 args = ["-y", "mcp-sqlite@1.0.9", "data/sample_logs.db"]
 
-# 쓰기 가능한 사본: 고쳐 봐도 되는 곳입니다.
+# 내 PC의 앱 DB: 고쳐 봐도 되는 곳입니다. 서버를 한 번 켜면 생깁니다.
 [mcp_servers.review-dev]
 command = "npx"
-args = ["-y", "mcp-sqlite@1.0.9", "data/dev.db"]
+args = ["-y", "mcp-sqlite@1.0.9", "data/app.db"]
 
 # 최신 공식 문서를 찾아 줍니다.
 [mcp_servers.context7]

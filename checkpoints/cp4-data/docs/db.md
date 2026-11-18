@@ -2,7 +2,7 @@
 
 > © 2026 김연지. All rights reserved. 수강생 개인 학습용 · 무단 강의·복제·배포·수정 금지 · [LICENSE.md](../LICENSE.md)
 
-현재 DB는 분석 기록 파일 하나입니다. `data/sample_logs.db`(읽기 전용 원본)와 그 사본 `data/dev.db`가 같은 구조입니다.
+현재 DB는 분석 기록 파일 하나입니다. `data/sample_logs.db`(읽기 전용 원본)입니다. 고쳐 보는 앱 DB `data/app.db`는 서버를 한 번 켜면 생깁니다.
 
 ## analysis_logs
 

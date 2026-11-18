@@ -16,7 +16,7 @@
 3. 테스트는 Given–When–Then 주석을 답니다.
 4. 새 패키지는 먼저 묻습니다.
 5. 리뷰 원문, API 키, 비밀번호를 밖으로 보내지 않습니다. `SECRET_KEY`는 `.env`와 Render 환경변수에만 둡니다.
-6. `data/sample_logs.db`는 읽기만 합니다. 고쳐 보는 것은 `data/dev.db`에서만 합니다.
+6. `data/sample_logs.db`는 읽기만 합니다. 고쳐 보는 것은 `data/app.db`(내 PC의 앱 DB, 서버를 한 번 켜면 생깁니다)에서만 합니다.
 7. 삭제나 DB 변경(DELETE, DROP, UPDATE)은 실행할 문장을 먼저 보여 주고 "승인"을 기다립니다.
 8. 애매하면 만들기 전에 먼저 질문합니다.
 9. "승인" 전에는 커밋하지 않습니다.

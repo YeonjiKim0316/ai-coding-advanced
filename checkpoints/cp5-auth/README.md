@@ -124,7 +124,7 @@ macOS:
 - `app/`: 서버 코드
 - `static/`: 화면 파일
 - `tests/`: 테스트
-- `data/`: 분석 기록 샘플(`sample_logs.db`, 읽기 전용 원본)과 그 사본(`dev.db`)
+- `data/`: 분석 기록 샘플(`sample_logs.db`, 읽기 전용 원본)와, 서버를 켜면 생기는 앱 DB(`app.db`)
 - `migrations/`: DB 표를 만드는 SQL 파일(번호 순서로 실행)
 - `.env.example`: `.env`를 만들 때 복사하는 본보기(`SECRET_KEY` 자리만 있음)
 - `docs/`: 상세 문서
@@ -140,7 +140,7 @@ macOS:
 - API 키·비밀번호·실제 고객 정보는 AI 채팅과 파일에 넣지 않습니다. `SECRET_KEY`는 `.env`와 Render 환경변수에만 둡니다.
 - 결제 수단은 어디에도 등록하지 않습니다.
 - Codex가 폴더 신뢰를 물으면, 이 저장소만 신뢰합니다.
-- `data/sample_logs.db`는 읽기만 합니다. 고쳐 보는 것은 `data/dev.db`에서 합니다.
+- `data/sample_logs.db`는 읽기만 합니다. 고쳐 보는 것은 `data/app.db`(내 PC의 앱 DB, 서버를 한 번 켜면 생깁니다)에서만 합니다.
 
 ## 막혔을 때
 
