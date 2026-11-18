@@ -14,5 +14,9 @@
 | MCP 도구가 안 보입니다 | Codex에서 `/mcp`를 쳐 서버 목록을 봅니다. 폴더를 신뢰했는지도 확인합니다. |
 | AI가 고치면 안 되는 파일을 바꿨습니다 | `git restore <파일>`로 되돌립니다. 되돌리기 전에 바뀐 내용을 `git diff <파일>`로 봅니다. |
 | 커밋할 때 "Please tell me who you are"가 나옵니다 | `git config --global user.name "내 이름"`과 `git config --global user.email "내 메일"`을 칩니다. |
+| 화면에 503이 계속 나옵니다 | `models/` 폴더에 두 파일이 있는지 봅니다. 없으면 인터넷이 되는 곳에서 처음 한 번 내려받습니다. |
+| 대시보드 카드가 비어 있습니다 | `app/dashboard.py`의 `QUERIES`에 SQL이 있는지, `data/sample_logs.db`가 있는지 봅니다. |
+| 새 대시보드 카드를 더하고 싶습니다 | `DASHBOARD.md` 표에 줄을 더하고, `QUERIES`와 `TITLES`에 더하고, 테스트를 더합니다. |
+| 500 오류가 났습니다 | 응답의 `request_id`(또는 `X-Request-ID` 헤더)를 복사해 서버 로그에서 같은 값을 찾습니다. 그 줄의 `error=`와 `at=`가 오류 이름과 위치입니다. |
 
 그래도 안 되면 무엇을 했는지 적어 손을 듭니다.

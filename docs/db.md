@@ -20,5 +20,18 @@
 | `mismatch` | INTEGER | 별점과 내용이 반대인가 (1 = 그렇다, 0 = 아니다) |
 | `review_text` | TEXT | 리뷰 글 |
 
-- 판매자 열이 없습니다. 누구의 리뷰인지 알 수 없습니다.
-- 인덱스가 없습니다.
+- 이 표는 읽기 전용 샘플입니다. 판매자 열이 없어서 누구의 리뷰인지 알 수 없습니다.
+
+## 저장용 DB (`data/app.db`, git에 올리지 않음)
+
+서버가 켜질 때 `migrations/*.sql`을 이름순으로 실행하고, 샘플 판매자 A·B를 넣습니다(`app/db.py`).
+테스트는 `APP_DB_PATH`로 임시 파일을 씁니다.
+
+| 표 | 열 | 메모 |
+|---|---|---|
+| `sellers` | `id`, `name`(겹치지 않음), `created_at`, `password_hash` | 샘플 판매자 `하루상점A`, `하루상점B`. 비밀번호는 pbkdf2 해시로만 저장합니다. |
+| `reviews` | `id`, `seller_id`(sellers.id), `text`, `rating`, `label`, `score`, `temperature`, `mismatch`, `memo`, `created_at` | 판매자 1 : 리뷰 N. 판매자를 지우면 리뷰도 지워집니다(CASCADE). |
+
+- 인덱스 `idx_reviews_seller_created`: `reviews(seller_id, created_at)` — "내 리뷰를 최근 것부터" 조회용입니다.
+- API: `POST /v1/login`, `POST /v1/reviews`(분석 후 저장), `GET /v1/reviews`, `PATCH /v1/reviews/{id}`(메모), `DELETE /v1/reviews/{id}`. 리뷰 API는 로그인(Bearer 토큰)이 필요합니다.
+- 마이그레이션: `001_sellers_reviews.sql`, `002_seller_password.sql`

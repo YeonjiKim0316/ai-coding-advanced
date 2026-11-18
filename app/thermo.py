@@ -30,7 +30,10 @@ def calm_score(score: float, text: str) -> float:
     """
     letters = sum(1 for ch in text if ch.isalnum())
     emojis = sum(1 for ch in text if _is_emoji(ch))
-    ratio = emojis / letters
+    if letters == 0:  # 글자가 하나도 없으면 나누지 않는다: 이모지만 있으면 "아주 많음", 아니면 0
+        ratio = float("inf") if emojis else 0.0
+    else:
+        ratio = emojis / letters
     if ratio >= 2:
         return round(0.5 + (score - 0.5) / 2, 4)
     return score
